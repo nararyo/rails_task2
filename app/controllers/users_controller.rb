@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-　　#データを消去するアクション
+    #データを消去するアクション
     def destroy
         user = User.find(params[:id])
         user.destroy
