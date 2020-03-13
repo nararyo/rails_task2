@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
     
     
+
   #新規作成画面に対応するアクション
   def new
     @user = User.new
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
     user.update(user_params)
     redirect_to :action => "index"
   end
+
     
   private 
   #----------------------------コントローラー内で呼び出すメソッド------------------------
