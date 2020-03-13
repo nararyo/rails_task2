@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-resources :users
+  resources :users
 
 #一覧画面へのルーティング 
 #get '/users', to: 'users#index'
