@@ -13,15 +13,19 @@ class UsersController < ApplicationController
     #新規登録するためのアクション
     def create
         User.create(user_params)
-        redirect_to :action => "index"
+        
     end
 
+    #詳細を表示するアクション
+    def show
+        @user = User.find(params[:id])
+    end
     #編集画面に遷移するアクション
     def edit
         @user = User.find(params[:id])
     end
 
-　　#データを消去するアクション
+    #データを消去するアクション
     def destroy
         user = User.find(params[:id])
         user.destroy
@@ -36,7 +40,8 @@ class UsersController < ApplicationController
 
     end
     
-    private #----------------------------コントローラー内で呼び出すメソッド------------------------
+    private 
+    #----------------------------コントローラー内で呼び出すメソッド------------------------
 
     def user_params
         #登録できる情報を制限するためのコード
